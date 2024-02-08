@@ -58,7 +58,7 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
     translation = 1
     rotation = 0
 
-    # blocage si suivi par ennemie 
+    # blocage si suivi par ennemi 
     if sensors["sensor_back"]["isRobot"] == True and sensors["sensor_back"]["isSameTeam"] == False:
         return 0, 0
     
@@ -67,34 +67,33 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
         return braitenberg_flee.step(robotId, sensors)
 
     # on fuit si on croise un allié
-    
-    # on prend une direction aleatoire pour couvrir le + de surface possible et eviter comportement repetee/cyclique
+    # on choisit une direction aléatoire aleatoire afin de ne pas obtenir de comportement cyclique et de couvrir un maximum de surface.
     if sensors["sensor_front"]["isRobot"] == True and sensors["sensor_front"]["isSameTeam"] == True:  # if allié devant
-    	while rotation == 0:  #pour etre sur que le robot ne suit pas son camarade
-    		rotation = random.uniform(-1, 1) 
+        while rotation == 0:  #pour etre sur que le robot ne suit pas son camarade
+            rotation = random.uniform(-1, 1) 
     	return translation, rotation
 
     # if allié devant à gauche
     if sensors["sensor_front_left"]["isRobot"] == True and sensors["sensor_front_left"]["isSameTeam"] == True:
-    	while rotation == 0:  # pour etre sur que le robot ne suit pas son camarade
+    	while rotation == 0:   # Tant que la valeur générée est égale à zéro, répéter la génération afin d'être sur que le robot ne suivra pas son allié
     		rotation = random.uniform(-1, 1)
     	return translation, rotation
 
     # if allié devant à droite
     if sensors["sensor_front_right"]["isRobot"] == True and sensors["sensor_front_right"]["isSameTeam"] == True:
-    	while rotation == 0:  # pour etre sur que le robot ne suit pas son camarade
+    	while rotation == 0:  
     		rotation = random.uniform(-1, 1)
     	return translation, rotation
 
     # if allié est à gauche
     if sensors["sensor_left"]["isRobot"] == True and sensors["sensor_left"]["isSameTeam"] == True:
-    	while rotation == 0:  # pour etre sur que le robot ne suit pas son camarade
+    	while rotation == 0:  
     		rotation = random.uniform(-1, 1)
     	return translation, rotation
 
     # if allié est à droite
     if sensors["sensor_right"]["isRobot"] == True and sensors["sensor_right"]["isSameTeam"] == True:
-    	while rotation == 0:  # pour etre sur que le robot ne suit pas son camarade
+    	while rotation == 0:  
     		rotation = random.uniform(-1, 1)
     	return translation, rotation
 
