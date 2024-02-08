@@ -9,7 +9,7 @@ import randomizer
 count=0
 
 def get_team_name():
-    return "Les foufous de Sochaux" # à compléter (comme vous voulez)
+    return "VROUM VROUM HASBULLA" # à compléter (comme vous voulez)
 
 def step(robotId, sensors):
 	global count
