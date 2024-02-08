@@ -3,8 +3,8 @@
 # Binome:
 #  Prénom Nom: Ryane Mehdi Djari
 #  Prénom Nom: Sunny Liu
+import suivre
 import explorer
-import randomizer
 
 count=0
 
