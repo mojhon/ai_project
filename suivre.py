@@ -67,9 +67,9 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
         return braitenberg_flee.step(robotId, sensors)
 
     # on fuit si on croise un allié
-    # on choisit une direction aléatoire aleatoire afin de ne pas obtenir de comportement cyclique et de couvrir un maximum de surface.
+    # on choisit une direction aléatoire afin de ne pas obtenir de comportement cyclique et de couvrir un maximum de surface.
     if sensors["sensor_front"]["isRobot"] == True and sensors["sensor_front"]["isSameTeam"] == True:  # if allié devant
-        while rotation == 0:  #pour etre sur que le robot ne suit pas son camarade
+        while rotation == 0:  # Tant que la valeur générée est égale à zéro, répéter la génération afin d'être sur que le robot ne suivra pas son allié
             rotation = random.uniform(-1, 1)
             
         return translation, rotation
@@ -77,7 +77,7 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
 
     # if allié devant à gauche
     if sensors["sensor_front_left"]["isRobot"] == True and sensors["sensor_front_left"]["isSameTeam"] == True:
-    	while rotation == 0:   # Tant que la valeur générée est égale à zéro, répéter la génération afin d'être sur que le robot ne suivra pas son allié
+    	while rotation == 0:   
     		rotation = random.uniform(-1, 1)
     	return translation, rotation
 
