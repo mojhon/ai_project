@@ -22,7 +22,7 @@ def step(robotId, sensors):
 		return explorer.step(robotId,sensors)
 	if(robotId%8 == 0):
 		count += 1	
-	if count % 200 < 100:#chaque 100 
+	if count % 200 <= 100:#chaque 100 
 		return explorer.step(robotId,sensors)
 	else:
 		return suivre.step(robotId,sensors)
