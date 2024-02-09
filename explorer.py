@@ -79,7 +79,7 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
         if sensors["sensor_front"]["distance"] == 1:
             if random.random() < 0.4:
                 rotation = -0.4
-            elif random.random() <= 0.3:
+            elif random.random() <= 0.6:
                 rotation = 0
             else:
                 rotation = 0.4
