@@ -71,7 +71,7 @@ def step(robotId, sensors): # <<<<<<<<<------- fonction à modifier pour le TP1
     if sensors["sensor_front"]["isRobot"] == True and sensors["sensor_front"]["isSameTeam"] == True:  # if allié devant
         while rotation == 0:  #pour etre sur que le robot ne suit pas son camarade
             rotation = random.uniform(-1, 1) 
-    	return translation, rotation
+	return translation, rotation
 
     # if allié devant à gauche
     if sensors["sensor_front_left"]["isRobot"] == True and sensors["sensor_front_left"]["isSameTeam"] == True:
